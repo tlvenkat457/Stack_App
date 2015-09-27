@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="angular.js"></script>
+    <script src="angular-route.min.js"></script>
+
+    <style>input.ng-invalid.ng-dirty{background-color: pink}</style>
+
+  
+
+</head >
+<body ng-app="single-page-app">
+<div>
+
+    <div class="container">
+
+        <h2>myApp</h2><hr>
+
+        <a href="#">Home</a>|<a href="#register">Register</a>|<a href="#search">Search</a>|<a href="#events">Events</a>
+
+        <br/>
+
+
+        <div ng-view align="left" class="ng-cloak">
+
+        </div>
+    </div>
+
+</div>
+
+<script src="services/serviceMaster.js"></script>
+<script src="app.js"></script>
+<script src="filters.js"></script>
+<script src="eventControl.js"></script>
+<script src="services/RegValidateData.js"></script>
+
+</body>
+</html>

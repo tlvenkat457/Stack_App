@@ -1,0 +1,42 @@
+<br>
+
+
+    <form class="form-group-lg" name="newEventForm">
+
+        <fieldset>
+<label for="ename">Event Name</label>
+            <input type="text" ng-model="event.ename" required>
+
+            <label for="edate">Event Date</label>
+            <input type="text" ng-model="event.edate" required ng-pattern="/\d\d/\d\d/\d\d\d\d/">
+
+            <label for="etime">Event Time</label>
+            <input type="text" ng-model="event.etime">
+
+            <label for="eaddress">Event Address</label>
+            <input type="text" ng-model="event.eaddress">
+
+            <label for="url">Image URL</label>
+            <input type="url" ng-model="event.eventUrl">
+
+            <img ng-src="{{event.eventUrl}}" height="70" width="90">
+
+<br><br><br><br>
+            <input type="submit"  class="btn btn-danger"  value="cancel">
+            <input type="submit" value="Add" class="btn btn-primary" ng-click="createEvent(event,newEventForm )" ng-disabled="newEventForm.$invalid">
+            </fieldset>
+
+    </form>
+
+
+<div align="right">
+    <table>
+        <tr>
+            Event Name:{{event.ename}} <br>Event Date:{{event.edate}}<br> Event Time:{{event.etime}}<br> Event Address:{{event.eaddress}}
+        </tr>
+
+    </table>
+
+
+
+</div>
