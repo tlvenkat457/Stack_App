@@ -11,7 +11,7 @@ serviceMaster.service('serviceSlave', function ($http,$q) {
     this.square = function (a) {
             return a*a};
 
-   //API caller
+   //API caller service
     this.apiCall=function(url,successcb){
 
         var deferred = $q.defer();
