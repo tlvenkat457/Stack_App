@@ -1,5 +1,5 @@
-<br>
 
+<div class="form" id="form">
 <form name="regForm" novalidate method="GET" ng-submit="regValidate(user)">
 
 
@@ -60,18 +60,23 @@
 
 </form>
 </div>
-<br>
 
-<div class="bg-warning"  name="alertBox">
+<div class="focus" id="focus">
+ 
+<pre >{{user | json}}</pre>
+    
+</div>
+
+<div class="bg-warning"  name="alertBox" ng-show="regForm.$invalid">
     <div class="alert-danger" ng-show="regForm.$invalid && regForm.user.password.length!=0"><strong> Required Fields</strong></div>
     <p ng-show="regForm.lname.$error.required">Lastname</p>
     <p ng-show="regForm.phone_name.$error.required">Phone Number</p>
     <p ng-show="regForm.email.$error.required">Email</p>
     <p ng-show="regForm.uname.$error.required">User Name</p>
-    <p ng-show="regForm.pass.$error.required">Password</p>
+    <p ng-show="regForm.pass.$error.required || regForm.pass.$error.pattern">Password</p>
     <p ng-show="regForm.zip.$error.required">Postal code</p>
 </div>
 
-<h3>Your Details</h3>
-<pre class="focus">{{user | json}}</pre>
+
+
 

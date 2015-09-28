@@ -42,8 +42,6 @@ app.controller('cfgController',function($scope,$http,$timeout,validateData,servi
             console.log('Username available. ');
             $scope.regForm.uname.$setValidity("unameAvailable", true);
 
-
-
         }
 
     }
@@ -80,19 +78,11 @@ app.controller('cfgController',function($scope,$http,$timeout,validateData,servi
         }
 
     };
-
-
     $scope.regValidate = function(userData,formName)
     {
 
         console.log('got the details');
     }
-
-   // $scope.userNameCheck=checkUserName($scope.user.uname);
-
-
-
-
 
 });
 

@@ -7,31 +7,38 @@ var serviceMaster = angular.module('serviceMaster', []);
 
 
 serviceMaster.service('serviceSlave', function ($http,$q) {
+    
+    var service=this;
+    
     //sqrOf Number
-    this.square = function (a) {
+    
+    service.square = function (a) {
             return a*a};
 
    //API caller service
-    this.apiCall=function(url,successcb){
+    service.apiCall=function(url,successcb){
 
+        
         var deferred = $q.defer();
 
         $http.get(url).then(onRes,onErr);
 
         function onRes(response)
         {
-            console.log("Got response");
-            deferred.resolve(response.data);
-            return successcb(response.data);
+            console.log("Got response...resolving data");
+            deferred.resolve(successcb(response.data));
+           
         }
 
-        function onErr(reason)
+        function onErr(reason,status)
         {
-            console.log("api call returned error "+reason.error.message);
-            deferred.reject(false);
+            
+            console.log(reason.statusText);
+            deferred.reject(reason.statusText);
         }
         
-        deferred.promise();
+       
+        return deferred.promise;
         
     }
 
