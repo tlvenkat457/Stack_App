@@ -1,64 +1,70 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <script src="angular.js"></script>
     <script src="angular-route.min.js"></script>
 
-    <style>input.ng-invalid.ng-dirty{background-color: pink}</style>
     <style>
-     .bg-warning{
-         float: right;
-     margin: auto;
-    width: 30%;
-    border:1px solid indianred;
-    padding: 10px;
-     }   
-     #focus{
-     float: center;
-     margin: auto;
-    width: 30%;
-    
-    
-     }
-       #form{
-     float: left;
-     margin: auto;
-    width: 30%;
-    
-    
-     }
+        input.ng-invalid.ng-dirty {
+            background-color: tan
+        }
+    </style>
+    <style>
+        .bg-warning {
+            float: right;
+            margin: auto;
+            width: 30%;
+            border: 1px solid indianred;
+            padding: 10px;
+        }
+        
+        #focus {
+            float: center;
+            margin: auto;
+            width: 30%;
+        }
+        
+        #form {
+            float: left;
+            margin: auto;
+            width: 30%;
+        }
     </style>
 
-  
 
-</head >
+
+</head>
+
 <body ng-app="single-page-app">
-<div>
+    <div>
 
-    <div class="container">
+        <div class="container">
 
-        <h2>myApp</h2><hr>
+            <h2>myApp</h2>
+            <hr>
 
-        <a href="#">Home</a>|<a href="#register">Register</a>|<a href="#search">Search</a>|<a href="#events">Events</a>
+            <a href="#">Home</a>|<a href="#register">Register</a>|<a href="#search">Search</a>|<a href="#events">Events</a>
 
-        <br/>
+            <br/>
 
 
-        <div ng-view  class="ng-cloak">
+            <div ng-view class="ng-cloak">
 
+            </div>
         </div>
+
     </div>
 
-</div>
-
-<script src="services/serviceMaster.js"></script>
-<script src="app.js"></script>
-<script src="filters.js"></script>
-<script src="eventControl.js"></script>
-<script src="services/RegValidateData.js"></script>
+    <script src="services/serviceMaster.js"></script>
+    <script src="app.js"></script>
+    <script src="filters.js"></script>
+    <script src="eventControl.js"></script>
+    <script src="services/RegValidateData.js"></script>
 
 </body>
+
 </html>

@@ -1,73 +1,110 @@
-
 <div class="form" id="form">
-<form name="regForm" novalidate method="GET" ng-submit="regValidate(user)">
+    <form name="regForm" novalidate method="GET" ng-submit="regValidate(user)">
 
 
-    <table>
-        <tr>
-            <td> <label for='lname' >Last name</label></td>
-            <td><input type="text"  ng-model="user.lname" required name="lname" ></td>
-            
-        </tr>
+        <table>
+            <tr>
+                <td>
+                    <label for='lname'>Last name</label>
+                </td>
+                <td>
+                    <input type="text" ng-model="user.lname" required name="lname">
+                </td>
+
+            </tr>
 
 
-        <tr>
-            <td><label for="phone">Phone</label></td>
-            <td><input type="text" ng-model="user.phone" required ng-pattern="validData.phone" name="phone_name"></td>
-            <td ng-show="regForm.phone_name.$error.pattern"><font size="0.5px" color="red"><strong>Invalid Format</strong></font></td>
-        </tr>
+            <tr>
+                <td>
+                    <label for="phone">Phone</label>
+                </td>
+                <td>
+                    <input type="text" ng-model="user.phone" required ng-pattern="validData.phone" name="phone_name">
+                </td>
+                <td ng-show="regForm.phone_name.$error.pattern"><font size="0.5px" color="red"><strong>Invalid Format</strong></font></td>
+            </tr>
 
-        <tr>
-            <td><label for="email">Email</label></td>
-            <td><input type="email" ng-model="user.email" required  name="email"></td>
-            <td ng-show="regForm.email.$error.email"><font size="0.5px" color="red"><strong>Invalid Email</strong></font></td>
-        </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                </td>
+                <td>
+                    <input type="email" ng-model="user.email" required name="email">
+                </td>
+                <td ng-show="regForm.email.$error.email"><font size="0.5px" color="red"><strong>Invalid Email</strong></font></td>
+            </tr>
 
-        <tr>
-            <td><label for="userName">User Name</label></td>
-            <td><input type="text" ng-model="user.uname" required  name="uname" ng-change="validateUserName(user.uname)"></td>
-            <td ng-show="regForm.uname.$error.unameAvailable">Username already exists</td>
-        </tr>
+            <tr>
+                <td>
+                    <label for="userName">User Name</label>
+                </td>
+                <td>
+                    <input type="text" ng-model="user.uname" required name="uname" ng-change="validateUserName(user.uname)">
+                </td>
+                <td ng-show="regForm.uname.$error.unameAvailable">Username already exists</td>
+            </tr>
 
-        <tr>
-            <td><label for="password">Password</label></td>
-            <td><input type="password" ng-model="user.password" name="pass" required ng-pattern="validData.password"><br></td>
-            <td ng-show="regForm.pass.$error.pattern"><font size="0.5px" color="red"><strong>Invalid Password</strong>Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</font></td>
-        </tr>
-        <tr ng-hide="fields">
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input type="password" ng-model="user.password" name="pass" required ng-pattern="validData.password">
+                    <br>
+                </td>
+                <td ng-show="regForm.pass.$error.pattern"><font size="0.5px" color="red"><strong>Invalid Password</strong>Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</font></td>
+            </tr>
+            <tr ng-hide="fields">
 
-            <td><label for="Location">Location</label></td>
-            <td><input type="text" ng-model="locationDetails.places[0]['place name']" name="Location" ng-disabled="true"><br></td>
-        </tr>
+                <td>
+                    <label for="Location">Location</label>
+                </td>
+                <td>
+                    <input type="text" ng-model="locationDetails.places[0]['place name']" name="Location" ng-disabled="true">
+                    <br>
+                </td>
+            </tr>
 
-        <tr ng-hide="fields">
+            <tr ng-hide="fields">
 
-            <td><label for="State">State</label></td>
-            <td><input type="text" ng-model="locationDetails.places[0].state" name="state" ng-disabled="true"><br></td>
-        </tr>
-        <tr>
-            <td><label for="Zip">Postal Code</label></td>
-            <td><input type="text" ng-model="user.zip" name="zip" required ng-pattern="validData.zip" ng-change="validateLocation(user.zip)"><br></td>
-            <td ng-show="regForm.zip.$error.pattern"><font size="0.5px" color="red"><strong>Invalid postal code</strong>Only USA postal codes are allowed</font></td>
+                <td>
+                    <label for="State">State</label>
+                </td>
+                <td>
+                    <input type="text" ng-model="locationDetails.places[0].state" name="state" ng-disabled="true">
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Zip">Postal Code</label>
+                </td>
+                <td>
+                    <input type="text" ng-model="user.zip" name="zip" required ng-pattern="validData.zip" ng-change="validateLocation(user.zip)">
+                    <br>
+                </td>
+                <td ng-show="regForm.zip.$error.pattern"><font size="0.5px" color="red"><strong>Invalid postal code</strong>Only USA postal codes are allowed</font></td>
 
-<br>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="submit"  ng-disabled="regForm.$invalid"  class="btn-success"></td>
-        </tr>
+                <br>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="submit" ng-disabled="regForm.$invalid" class="btn-success">
+                    </td>
+                </tr>
 
-    </table>
+        </table>
 
-</form>
+    </form>
 </div>
 
 <div class="focus" id="focus">
- 
-<pre >{{user | json}}</pre>
-    
+
+    <pre>{{user | json}}</pre>
+
 </div>
 
-<div class="bg-warning"  name="alertBox" ng-show="regForm.$invalid">
+<div class="bg-warning" name="alertBox" ng-show="regForm.$invalid">
     <div class="alert-danger" ng-show="regForm.$invalid && regForm.user.password.length!=0"><strong> Required Fields</strong></div>
     <p ng-show="regForm.lname.$error.required">Lastname</p>
     <p ng-show="regForm.phone_name.$error.required">Phone Number</p>
@@ -76,7 +113,3 @@
     <p ng-show="regForm.pass.$error.required || regForm.pass.$error.pattern">Password</p>
     <p ng-show="regForm.zip.$error.required">Postal code</p>
 </div>
-
-
-
-
