@@ -118,5 +118,8 @@ app.config(function ($routeProvider) {
         templateUrl: 'Events.html',
         controller: 'eventControl'
 
+    }).when('/login', {
+        templateUrl: 'login.html',
+        controller: 'loginControl'
     })
 });
