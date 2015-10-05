@@ -101,6 +101,13 @@ app.controller('events', function ($scope, $http) {
 
 });
 
+app.controller('loginControl', function ($scope, $http) {
+
+
+    console.log('Attempt to login');
+
+});
+
 
 
 app.config(function ($routeProvider) {
