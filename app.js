@@ -35,7 +35,7 @@ app.controller('cfgController', function ($scope, $http, $timeout, validateData,
             }
 
             else {
-                console.log('Username available. ');
+                console.log('Username available :) ');
                 $scope.regForm.uname.$setValidity("unameAvailable", true);
 
             }
